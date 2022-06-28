@@ -40,12 +40,14 @@ for (let i = 0; i < ourTeam.length; i++){
     let newImg = createNewimg(ourTeam[i].image);
     myWrapper.append(newImg);
 
-    let newTextElement = createNewElement(ourTeam[i].name);
-    myWrapper.append(newTextElement);
+    let newNameElement = createNewElement(ourTeam[i].nome);
+    let newRoleElement = createNewElement(ourTeam[i].ruolo);
+
+    myWrapper.append(newNameElement, newRoleElement);
     
-    myWrapper.innerHTML += (`
-        ${ourTeam[i].nome} ${ourTeam[i].ruolo}
-    `);
+    // myWrapper.innerHTML += (`
+    //     ${ourTeam[i].nome} ${ourTeam[i].ruolo}
+    // `);
     
 }
 
@@ -58,6 +60,7 @@ function createNewimg(attribute) {
 
 function createNewElement(element) {
     const currentElement = document.createElement('span');
+    currentElement.classList.add('d-block');
     currentElement.innerHTML = element;
     return currentElement;
 }
