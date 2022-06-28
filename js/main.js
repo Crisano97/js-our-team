@@ -37,15 +37,27 @@ const ourTeam = [
 const myWrapper = document.getElementById('wrapper');
 
 for (let i = 0; i < ourTeam.length; i++){
+    let newImg = createNewimg(ourTeam[i].image);
+    myWrapper.append(newImg);
+
+    let newTextElement = createNewElement(ourTeam[i].name);
+    myWrapper.append(newTextElement);
+    
     myWrapper.innerHTML += (`
         ${ourTeam[i].nome} ${ourTeam[i].ruolo}
     `);
-    let newImg = createNewimg(ourTeam[i].image);
-    myWrapper.append(newImg);
+    
 }
 
 function createNewimg(attribute) {
     const currentImg = document.createElement('img');
     currentImg.setAttribute("src", attribute)
     return currentImg;
+}
+
+
+function createNewElement(element) {
+    const currentElement = document.createElement('span');
+    currentElement.innerHTML = element;
+    return currentElement;
 }
