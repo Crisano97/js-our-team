@@ -34,7 +34,7 @@ const ourTeam = [
 
 ]
 
-// for (let key in ourTeam){
-
-// }
+for (let i = 0; i < ourTeam.length; i++){
+    console.log(`${ourTeam[i].nome} ${ourTeam[i].ruolo} ${ourTeam[i].image}`);
+}
 
