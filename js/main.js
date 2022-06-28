@@ -34,7 +34,11 @@ const ourTeam = [
 
 ]
 
+const myWrapper = document.getElementById('wrapper');
+
 for (let i = 0; i < ourTeam.length; i++){
-    console.log(`${ourTeam[i].nome} ${ourTeam[i].ruolo} ${ourTeam[i].image}`);
+    myWrapper.innerHTML += (`
+        ${ourTeam[i].nome} ${ourTeam[i].ruolo} ${ourTeam[i].image}
+    `);
 }
 
